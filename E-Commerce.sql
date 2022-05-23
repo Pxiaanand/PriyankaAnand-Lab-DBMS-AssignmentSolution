@@ -214,7 +214,7 @@ DELIMITER &&
 CREATE PROCEDURE Supplier_Rating()
 
 Select supplier.supp_id as SUPPLIER_ID, supplier.supp_name as SUPPLIER_NAME, sum(rating.rat_ratstars)/count(rating.rat_ratstars) as Average_Rating, 
-CASE sum(rating.rat_ratstars)/count(rating.rat_ratstars)
+CASE
 WHEN sum(rating.rat_ratstars)/count(rating.rat_ratstars)=5 THEN "EXCELLENT SERVICE"
 WHEN sum(rating.rat_ratstars)/count(rating.rat_ratstars)=4 THEN "GOOD SERVICE"
 WHEN sum(rating.rat_ratstars)/count(rating.rat_ratstars)>=2 and sum(rating.rat_ratstars)/count(rating.rat_ratstars)<4 THEN "AVERAGE SERVICE"
